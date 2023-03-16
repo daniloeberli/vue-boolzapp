@@ -52,6 +52,16 @@ li{
     align-items: center;
 }
 
+.justify-end{
+    justify-content: flex-end;
+}
+
+.send{
+    background-color: #d5f9ba;
+    padding:  5px 10px ;
+    max-width: 35%;
+}
+
 /*
 SIDEBAR
 */
@@ -115,7 +125,9 @@ MAIN-BOX
     min-height: calc(100% - 100px);
 }
 
-
+.main-box .main-chat-area{
+    padding: 50px 80px;
+}
 
 
 .main-box .main-footer{
