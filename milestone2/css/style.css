@@ -139,6 +139,14 @@ SIDEBAR
     overflow-y: scroll;
 }
 
+.contacts-chat li:hover{
+    cursor: pointer;
+}
+
+.active{
+    background-color: #e9ebeb;
+}
+
 .contacts-chat .contacts-chat-info{
     padding-left: 15px;
 }

@@ -66,7 +66,7 @@
             <!--sezione delle chat-->
             <section class="contacts-chat">
                 <ul>
-                    <li v-for="contact in contacts">
+                    <li v-for="(contact,index) in contacts" :class="{'active': activeContact ===index} " @click="selectContact(index)">
                         <img class="avatar-img" :src="contact.avatar" alt="">
 
                         <div class="contacts-chat-info" style="flex-grow: 2;">
