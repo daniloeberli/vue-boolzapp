@@ -217,6 +217,13 @@ createApp({
         }
     },
     methods: {
+        convertDate() {
+           let strSplit = this.contacts[this.activeContact].messages.date.split(' ');
+           let strDate = strSplit[0] + strSplit[1] + strSplit[2] + strSplit[3] + strSplit[4];
+           console.log(strSplit);
+           console.log(strDate);
+           return strDate;
+        },
         // metodo per selezionare un contatto
         selectContact(index) {
             this.activeContact = index
@@ -224,9 +231,11 @@ createApp({
         // metodo per inviare un messaggio
         sendMessage() {
             if (this.newMessage.trim() !== '') {
+                let now = new Date();
                 this.contacts[this.activeContact].messages.push({
                     message: this.newMessage,
-                    status: 'sent'
+                    status: 'sent',
+                    date: now.getHours() + ':' + now.getMinutes()
                 })
                 this.autoReply();
             }
@@ -238,7 +247,8 @@ createApp({
             setTimeout(() => {
                 this.contacts[this.activeContact].messages.push({
                     message: 'ok',
-                    status: 'received'
+                    status: 'received',
+                    date: new Date().getHours() + ':' + new Date().getMinutes()
                 })
             }, 1000)
         },
