@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Boolzapp</title>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <aside class="sidebar">
+            <!--sezione con informazioni e icone utente-->
+            <section class="user-header align-center">
+                <div class="user-info d-flex align-center">
+                    <img class="avatar-img" src="../img/avatar_io.jpg" alt="">
+                    <div>
+                        <p>Sofia</p>
+                    </div>
+                </div>
+                <div class="user-icons">
+                    <a href="">
+                        <i class="fa fa-circle-notch"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-comment-alt"></i>
+                    </a>
+                    <a href="">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </a>
+                </div>
+            </section>
+            <!--sezione attiva notifiche-->
+            <section class="notification">
+                <div class="bell-icon">
+                    <a href="">
+                        <i class="fa fa-bell-slash"></i>
+                    </a>
+                </div>
+
+                <div class="notification-text">
+                    <p>ricevi notification</p>
+                    <a href="#">attiva notification</a>
+                </div>
+            </section>
+            <!--sezione searchbar-->
+            <section class="search">
+                <div class="searchbar d-flex">
+                    <a href="#">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <div class="width-100">
+                        <input v-model="searchKey" @keyup="searchChat" class="width-100" type="text"
+                            placeholder="Cerca chat">
+                    </div>
+                </div>
+            </section>
+            <!--sezione delle chat-->
+            <section class="contacts-chat">
+                <ul>
+                    <li v-for="(contact,index) in contacts" v-show="contact.visible"
+                        :class="{'active': activeContact ===index} " @click="selectContact(index)">
+                        <img class="avatar-img" :src="contact.avatar" alt="">
+
+                        <div class="contacts-chat-info" style="flex-grow: 2;">
+                            <p>{{contact.name}}</p>
+                            <h6>ultimo messaggio inviato</h6>
+                        </div>
+                        <div>
+                            12:00
+                        </div>
+
+                    </li>
+                </ul>
+            </section>
+        </aside>
+        <!--sezione chat-->
+        <main class="main-box">
+            <!--header chat-->
+            <div class="main-header">
+                <div class="d-flex align-center">
+                    <img class="avatar-img" :src="contacts[activeContact].avatar" alt="">
+                    <div>
+                        <p>{{contacts[activeContact].name}}</p>
+                        <h6>Ultimo accesso oggi alle 12:00</h6>
+                    </div>
+                
+                    
+                </div>
+                <div>
+                    <a href="#">
+                        <i class="fa fa-search"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-paperclip"></i>
+                    </a>
+                    <a href="#">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </a>
+                </div>
+            </div>
+            <!--sezione dove vengono mostrati i messaggi-->
+            <section class="main-chat-area">
+                <div v-for="message in contacts[activeContact].messages" style="display: contents;">
+                    <div id="text-msg" class="text" :class="message.status">
+                        <p>{{message.message}}</p>
+                        <p id="text-time">{{message.date}}</p>
+                    </div>
+                </div>
+            </section>
+
+            <!--sezione dove si scrive il messaggio-->
+            <section class="main-footer">
+
+                <a class="footer-icon" href="#">
+                    <i class="fa fa-smile"></i>
+                </a>
+                <!--input per scrivere il messaggio -->
+                <div class="main-footer-write"><input @keyup.enter="sendMessage" v-model="newMessage" class="width-100"
+                        type="text" placeholder="scrivi un msg"></div>
+
+                <a class="footer-icon" href="#">
+                    <i class="fa fa-microphone-alt"></i>
+                </a>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.3.0/build/global/luxon.min.js"></script>
+    <script src="luxon.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

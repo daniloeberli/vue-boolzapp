@@ -4,7 +4,7 @@
 A (not very) innovative messaging platform made with VueJs
 
 
-
+[ERRORE NEI PUSH, CI SONO ELEMENTI DI MILESTONE SUCCESSIVI IMPLEMENTATI IN MILESTIONE PRECEDENTI]
 
 
 ## Roadmap
