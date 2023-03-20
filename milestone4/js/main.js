@@ -217,12 +217,14 @@ createApp({
         }
     },
     methods: {
-        // metodo per avere la data di un messaggio nel formato hh/mm
-        dateFormatter(index) {
-            let strSplit = this.contacts[this.activeContact].messages[index].date.split(' ');
-            let strDate = strSplit[1];
-            let strTime = strDate[0] + strDate[1] + strDate[2] + strDate[3] + strDate[4];
-            return strTime;
+        // metodi per gestione delle date usando LuxonJs
+        dateFormatter2(index) {
+            let dt = luxon.DateTime.fromFormat(this.contacts[this.activeContact].messages[index].date, 'dd/mm/yyyy HH:mm:ss').toLocaleString(luxon.DateTime.TIME_24_SIMPLE);
+            return dt;
+        },
+        getDate(){
+            let now = luxon.DateTime.now().toFormat('dd/mm/yyyy HH:mm:ss');
+            return now;
         },
         // metodo per selezionare un contatto
         selectContact(index) {
@@ -231,11 +233,10 @@ createApp({
         // metodo per inviare un messaggio
         sendMessage() {
             if (this.newMessage.trim() !== '') {
-                let now = new Date();
                 this.contacts[this.activeContact].messages.push({
                     message: this.newMessage,
                     status: 'sent',
-                    date: now.getHours() + ':' + now.getMinutes()
+                    date: this.getDate()
                 })
                 this.autoReply();
             }
@@ -248,7 +249,7 @@ createApp({
                 this.contacts[this.activeContact].messages.push({
                     message: 'ok',
                     status: 'received',
-                    date: new Date().getHours() + ':' + new Date().getMinutes()
+                    date: this.getDate()
                 })
             }, 1000)
         },

@@ -113,7 +113,7 @@
                 <div v-for="(message,index) in contacts[activeContact].messages" style="display: contents;">
                     <div id="text-msg" class="text" :class="message.status">
                         <p class="msg-p">{{message.message}}</p>
-                        <p id="text-time">{{dateFormatter(index)}}</p>
+                        <p id="text-time">{{dateFormatter2(index)}}</p>
                     </div>
                 </div>
             </section>
@@ -129,7 +129,7 @@
                         type="text" placeholder="scrivi un msg"></div>
 
                 <a class="footer-icon" href="#">
-                    <i @click="convertDate" class="fa fa-microphone-alt"></i>
+                    <i  class="fa fa-microphone-alt"></i>
                 </a>
 
             </section>
