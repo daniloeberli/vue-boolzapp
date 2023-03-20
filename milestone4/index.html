@@ -113,7 +113,7 @@
                 <div v-for="message in contacts[activeContact].messages" style="display: contents;">
                     <div id="text-msg" class="text" :class="message.status">
                         <p class="msg-p">{{message.message}}</p>
-                        <p id="text-time">{{message.date}}</p>
+                        <p id="text-time">{{convertDate()}}</p>
                     </div>
                 </div>
             </section>

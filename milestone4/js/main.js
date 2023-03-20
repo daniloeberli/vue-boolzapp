@@ -217,13 +217,19 @@ createApp({
         }
     },
     methods: {
-        convertDate() {
-           let strSplit = this.contacts[this.activeContact].messages.date.split(' ');
-           let strDate = strSplit[0] + strSplit[1] + strSplit[2] + strSplit[3] + strSplit[4];
-           console.log(strSplit);
-           console.log(strDate);
-           return strDate;
-        },
+        // convertDate() {
+
+        //     let index = 
+        //     let strSplit = this.contacts[this.activeContact].messages[0].date.split(' ');
+        //     let strDate = strSplit[1];
+        //     let strTime = strDate[0] + strDate[1] + strDate[2] + strDate[3] + strDate[4];
+
+        //     console.log(strTime);
+        //     return strTime;
+        // },
+        convertDate2(index) {
+
+        }
         // metodo per selezionare un contatto
         selectContact(index) {
             this.activeContact = index
@@ -239,7 +245,7 @@ createApp({
                 })
                 this.autoReply();
             }
-            
+
             this.newMessage = '';
         },
         // metodo per inviare un messaggio automaticamente
@@ -254,13 +260,13 @@ createApp({
         },
         //metodo per filtrare la lista delle chat 
         searchChat() {
-            this.contacts.forEach( (contact) => {
+            this.contacts.forEach((contact) => {
                 contact.visible = contact.name.trim().toLowerCase().includes(this.searchKey.trim().toLowerCase());
             })
         },
-        
+
 
     }
-    
+
 
 }).mount('#app')
