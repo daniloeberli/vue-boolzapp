@@ -110,10 +110,10 @@
             </div>
             <!--sezione dove vengono mostrati i messaggi-->
             <section class="main-chat-area">
-                <div v-for="message in contacts[activeContact].messages" style="display: contents;">
+                <div v-for="(message,index) in contacts[activeContact].messages" style="display: contents;">
                     <div id="text-msg" class="text" :class="message.status">
                         <p class="msg-p">{{message.message}}</p>
-                        <p id="text-time">{{convertDate()}}</p>
+                        <p id="text-time">{{dateFormatter(index)}}</p>
                     </div>
                 </div>
             </section>

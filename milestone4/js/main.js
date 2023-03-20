@@ -217,19 +217,13 @@ createApp({
         }
     },
     methods: {
-        // convertDate() {
-
-        //     let index = 
-        //     let strSplit = this.contacts[this.activeContact].messages[0].date.split(' ');
-        //     let strDate = strSplit[1];
-        //     let strTime = strDate[0] + strDate[1] + strDate[2] + strDate[3] + strDate[4];
-
-        //     console.log(strTime);
-        //     return strTime;
-        // },
-        convertDate2(index) {
-
-        }
+        // metodo per avere la data di un messaggio nel formato hh/mm
+        dateFormatter(index) {
+            let strSplit = this.contacts[this.activeContact].messages[index].date.split(' ');
+            let strDate = strSplit[1];
+            let strTime = strDate[0] + strDate[1] + strDate[2] + strDate[3] + strDate[4];
+            return strTime;
+        },
         // metodo per selezionare un contatto
         selectContact(index) {
             this.activeContact = index
