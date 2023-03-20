@@ -42,8 +42,9 @@ li{
 }
 
 i{
-    padding: 0 5px;
+    padding: 0 8px;
     color: #b1b1b1;
+    font-size: 18px;
 }
 
 .d-flex{
@@ -64,6 +65,14 @@ i{
 
 .width-100{
     width: 100%;
+}
+
+.user-name{
+    padding-left: 10px;
+}
+
+.user-name p{
+    font-size: 14;
 }
 
 .sent{
@@ -87,19 +96,37 @@ i{
     position: absolute;
     bottom: 0;
     right: 0;
+    padding-right: 5px;
+    padding-bottom:3px;
+    color: #b6babc;
+    font-size: 10px;
 }
 
 .text{
-    padding:  5px 10px ;
-    min-width: 30%;
+    padding:  13px;
+    min-width: 45%;
     max-width: 70%;
-    min-height: 10%;
     margin: 5px;
     border-radius: 10px;
 }
 
 .msg-p{
-    padding-right: 20%;
+    padding-right: 10%;
+    font-size: 13px;
+}
+
+h6{
+    color: #b6babc;
+}
+
+.lens{
+    border: 1px solid #f4f4f4;
+    padding: 0px 25px;
+}
+
+input:focus{
+    border: 0;
+    outline: 0;
 }
 
 /*
@@ -114,16 +141,15 @@ SIDEBAR
 }
 
 .sidebar .user-header{
+    height: 50px;
     display: flex;
     justify-content: space-between;
     background-color: #eaeaea;
-    min-height: 50px;
     padding: 10px 5px;
 }
 
 .sidebar .notification{
     display: flex;
-    min-height: 60px;
     background-color: #8edafc;
     padding: 10px 15px;
 }
@@ -141,20 +167,49 @@ SIDEBAR
     padding-left: 10px;
 }
 
+.notification-text p{
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.notification-text a{
+    color: #537592;
+    font-size: 12px;
+}
+
 .bell-icon i{
     color: #8edafc;
 }
 
 .sidebar .search{
-    min-height: 50px;
     background-color: #fafafa;
-    padding: 5px 10px;
+    padding: 5px;
+}
+
+.searchbar i{
+    vertical-align: middle;
+}
+
+.searchbar input{
+    line-height: 30px;
+    border: 0;
+    padding-left: 10px;
+}
+
+.searchbar input::placeholder{
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .sidebar .contacts-chat{
     background-color: #ffffff;
     height: 100%;
     overflow-y: scroll;
+}
+
+.contacts-chat-time{
+    color: #b6babc;
+    font-size: 10px;
 }
 
 .contacts-chat li:hover{
@@ -188,11 +243,11 @@ MAIN-BOX
 }
 
 .main-box .main-header{
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: #eaeaea;
-    min-height: 50px;
     padding: 10px 5px;
 }
 
@@ -202,7 +257,7 @@ MAIN-BOX
     display: flex;
     overflow-y: auto;
     flex-direction: column;
-    padding: 50px 80px;
+    padding: 30px 60px;
 }
 
 .main-box .main-footer{
@@ -220,8 +275,10 @@ MAIN-BOX
 
 .main-footer .main-footer-write{
     width: 80%;
+    border-radius: 5px;
+    border: 1px solid white;
 }
-
 .main-footer-write input{
     padding: 2%;
+    border: 0;
 }

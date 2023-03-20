@@ -23,7 +23,7 @@
             <section class="user-header align-center">
                 <div class="user-info d-flex align-center">
                     <img class="avatar-img" src="../img/avatar_io.jpg" alt="">
-                    <div>
+                    <div class="user-name">
                         <p>Sofia</p>
                     </div>
                 </div>
@@ -48,19 +48,19 @@
                 </div>
 
                 <div class="notification-text">
-                    <p>ricevi notification</p>
-                    <a href="#">attiva notification</a>
+                    <p>Ricevi notifiche di nuovi messaggi</p>
+                    <a href="#">Attiva notifiche desktop</a>
                 </div>
             </section>
             <!--sezione searchbar-->
             <section class="search">
                 <div class="searchbar d-flex">
-                    <a href="#">
-                        <i class="fa fa-search"></i>
+                    <a style="background-color: white" href="#">
+                        <i style="line-height: 30px" class="fa fa-search lens"></i>
                     </a>
-                    <div class="width-100">
+                    <div style="border: 1px solid #f4f4f4;" class="width-100">
                         <input v-model="searchKey" @keyup="searchChat" class="width-100" type="text"
-                            placeholder="Cerca chat">
+                            placeholder="Cerca o inizia una nuova chat">
                     </div>
                 </div>
             </section>
@@ -73,9 +73,9 @@
 
                         <div class="contacts-chat-info" style="flex-grow: 2;">
                             <p>{{contact.name}}</p>
-                            <h6>ultimo messaggio inviato</h6>
+                            <h6>Ultimo messaggio inviato</h6>
                         </div>
-                        <div>
+                        <div class="contacts-chat-time">
                             12:00
                         </div>
 
@@ -89,7 +89,7 @@
             <div class="main-header">
                 <div class="d-flex align-center">
                     <img class="avatar-img" :src="contacts[activeContact].avatar" alt="">
-                    <div>
+                    <div class="user-name">
                         <p>{{contacts[activeContact].name}}</p>
                         <h6>Ultimo accesso oggi alle 12:00</h6>
                     </div>
@@ -122,14 +122,14 @@
             <section class="main-footer">
 
                 <a class="footer-icon" href="#">
-                    <i class="fa fa-smile"></i>
+                    <i class="fa-regular fa-face-smile" style="color:#6a7275"></i>
                 </a>
                 <!--input per scrivere il messaggio -->
                 <div class="main-footer-write"><input @keyup.enter="sendMessage" v-model="newMessage" class="width-100"
-                        type="text" placeholder="scrivi un msg"></div>
+                        type="text" placeholder="Scrivi un messaggio"></div>
 
                 <a class="footer-icon" href="#">
-                    <i  class="fa fa-microphone-alt"></i>
+                    <i class="fa-solid fa-microphone" style="color:#6b7376"></i>
                 </a>
 
             </section>
