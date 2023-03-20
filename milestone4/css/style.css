@@ -141,7 +141,7 @@ SIDEBAR
 }
 
 .sidebar .user-header{
-    height: 50px;
+    /*height: 50px;*/
     display: flex;
     justify-content: space-between;
     background-color: #eaeaea;
@@ -243,7 +243,7 @@ MAIN-BOX
 }
 
 .main-box .main-header{
-    height: 50px;
+    /*height: 50px;*/
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -253,7 +253,7 @@ MAIN-BOX
 
 .main-box .main-chat-area{
     background-image: url("../../img/mine.jpg");
-    min-height: calc(100% - 100px);
+    min-height: calc(100% - 120px);
     display: flex;
     overflow-y: auto;
     flex-direction: column;
